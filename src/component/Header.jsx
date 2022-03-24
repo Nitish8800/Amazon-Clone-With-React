@@ -3,16 +3,19 @@ import "./Header.css";
 // import img1 from "./All_Images/amazon_PNG2.png";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <div className="header">
       {/* LOGO */}
-      <img
-        className="header_logo"
-        src="./all_image/amazon_PNG11.png"
-        alt="Amazon"
-      />
+      <Link to="/">
+        <img
+          className="header_logo"
+          src="./all_image/amazon_PNG11.png"
+          alt="Amazon"
+        />
+      </Link>
 
       <div className="header_search">
         <input className="header_serach_input" type="text" />
@@ -33,10 +36,12 @@ function Header() {
           <span className="header_optionLineTwo"> Prime</span>
         </div>
 
-        <div className="header_optionBasket">
-          <ShoppingBasketIcon />
-          <span className="header_optionLineTwo header_BasketCount">0</span>
-        </div>
+        <Link to="/checkout">
+          <div className="header_optionBasket">
+            <ShoppingBasketIcon />
+            <span className="header_optionLineTwo header_BasketCount">0</span>
+          </div>
+        </Link>
       </div>
     </div>
   );
