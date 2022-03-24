@@ -29,6 +29,20 @@
     margin-top: 10px;
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
+    height: 30px;
+    padding: 5px;
+    background-image: linear-gradient(
+      62deg,
+      rgb(243, 207, 117),
+      rgb(243, 207, 117),
+      rgb(243, 204, 108) 100%
+    );
+    border-radius: 3px;
+    border-color: #aa8935 #9c7e31 #06742e;
+    font-weight: bolder;
+  cursor: pointer;
+
+
   }
   
   .product__price {
