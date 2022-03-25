@@ -8,10 +8,14 @@ import Login from "./component/Login";
 import { auth } from "./component/firebase";
 import { useStateValue } from "./component/StateProvider";
 import Payment from "./component/Payment";
-// import { loadStripe } from "@stripe/stripe-js";
-// import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 // import { ToastContainer } from "react-toastify";
 // import Orders from "./Orders";
+
+const promise = loadStripe(
+  "pk_test_51Kh5ubSAVab8m4dQhxqSXzhj44DAwwO1MnYqeukkM6XCTVduU6r7NfX2AVCTxTsj3G9BG7ImsyD8t9gttMddUnQ600UORd9wNl"
+);
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -46,9 +50,10 @@ function App() {
           </Route>
           <Route path="/payment">
             <Header />
-            <Payment/>
+            <Elements stripe={promise}>
+              <Payment />
+            </Elements>
           </Route>
-
           <Route path="/">
             <Header />
             <Home />
