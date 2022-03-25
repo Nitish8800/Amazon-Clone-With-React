@@ -87,6 +87,16 @@ const reducer = (state, action) => {
         ...state,
         user: action.user,
       };
+    case "EMPTY_BASKET":
+      return {
+        ...state,
+        basket: [],
+      };
+    case "SET_DRAWER":
+      return {
+        ...state,
+        drawer: action.toggle,
+      };
     default:
       return state;
   }

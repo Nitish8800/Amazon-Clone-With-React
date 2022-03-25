@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./component/Login";
 import { auth } from "./component/firebase";
 import { useStateValue } from "./component/StateProvider";
-// import Payment from "./Payment";
+import Payment from "./component/Payment";
 // import { loadStripe } from "@stripe/stripe-js";
 // import { Elements } from "@stripe/react-stripe-js";
 // import { ToastContainer } from "react-toastify";
@@ -43,6 +43,10 @@ function App() {
           <Route path="/checkout">
             <Header />
             <Checkout />
+          </Route>
+          <Route path="/payment">
+            <Header />
+            <Payment/>
           </Route>
 
           <Route path="/">
