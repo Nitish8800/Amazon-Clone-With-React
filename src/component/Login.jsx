@@ -10,29 +10,27 @@ function Login() {
 
   const signIn = (e) => {
     e.preventDefault();
-    //  firebase;
+
     auth
       .signInWithEmailAndPassword(email, password)
       .then((auth) => {
-        if (auth) {
-          history.push("/");
-        }
+        history.push("/");
       })
-      .catch((err) => alert(err.message));
+      .catch((error) => alert(error.message));
   };
 
   const register = (e) => {
     e.preventDefault();
+
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
-        console.log(auth);
+        // it successfully created a new user with email and password
         if (auth) {
           history.push("/");
         }
       })
-      .catch((err) => alert(err.message));
-    // fancy firebase register
+      .catch((error) => alert(error.message));
   };
 
   return (
@@ -47,7 +45,7 @@ function Login() {
       <div className="login__container">
         <h1>Sign-in</h1>
         <form>
-          <h5>Email</h5>
+          <h5>E-mail</h5>
           <input
             type="text"
             value={email}
